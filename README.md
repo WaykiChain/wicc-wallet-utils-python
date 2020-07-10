@@ -1,5 +1,7 @@
 ## wicc-wallet-utils-python
-WaykiChain Wallet Library for Offline Operations written in Python
+WaykiChain Wallet Utility Library for raw transaction generation and signing and BaaS Posting etc operations
+
+Written in Python
 
 ## Install via Pip
 ```
