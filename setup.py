@@ -15,7 +15,7 @@ setuptools.setup(
     description="WaykiChain Wallet Utils",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/louishwh/",
+    url="https://github.com/WaykiChain/wicc-wallet-utils-python",
     packages=setuptools.find_packages(),
     install_requires=[
         'cryptos==1.36',
