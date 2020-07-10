@@ -8,7 +8,7 @@ with io.open("README.md", "r", encoding='utf-8') as fh:
 
 setuptools.setup(
     # name="waykichain",
-    name="wicc-wallet-utils",
+    name="wicc_wallet_utils",
     version="0.0.1",
     author="WaykiChain CoreDev",
     author_email="coredev@waykichainhk.com",
