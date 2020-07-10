@@ -5,13 +5,13 @@ from wicc.wiccrpc.box.RpcManager import RpcManager
 class Transaction(object):
 
     @classmethod
-    def transfer(cls, sender, receiver, amount, fee=10000):
+    def transfer(cls, sender, receiver, amount, fee=100000):
         """
         从源地址账户转账到目的地址账户，手续费默认为:10000sawi
         :param sender: 发送者地址
         :param receiver: 接受者地址
         :param amount: 发送金额(单位sawi)
-        :param fee: 交易费用(单位sawi),最少10000sawi
+        :param fee: 交易费用(单位sawi),最少100000sawi
         :return: 交易Hash
         """
         data = {
@@ -21,13 +21,13 @@ class Transaction(object):
         return RpcManager.request(data)['result']['hash']
 
     @classmethod
-    def generate_signature(cls, sender, receiver, amount, fee=10000):
+    def generate_signature(cls, sender, receiver, amount, fee=100000):
         """
          生成交易签名
         :param sender: 发送者地址
         :param receiver: 接受者地址
         :param amount: 发送金额(单位sawi)
-        :param fee: 交易费用(单位sawi),最少10000sawi
+        :param fee: 交易费用(单位sawi),最少100000sawi
         :return: 交易签名
         """
         data = {

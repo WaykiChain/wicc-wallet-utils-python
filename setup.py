@@ -9,10 +9,10 @@ with io.open("README.md", "r", encoding='utf-8') as fh:
 setuptools.setup(
     # name="waykichain",
     name="wicc",
-    version="0.0.15",
+    version="0.0.16",
     author="WaykiChain CoreDev",
     author_email="coredev@waykichainhk.com",
-    description="WaykiChain Wallet",
+    description="WaykiChain Wallet Utils",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/louishwh/",

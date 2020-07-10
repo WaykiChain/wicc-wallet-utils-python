@@ -32,7 +32,7 @@ if __name__ == '__main__':
     # tr = AssetPublishTransaction()
     # tr.valid_height = 11443
     # tr.fee_amount = 1000000
-    # tr.register_id = "0-1"
+    # tr.regid = "0-1"
     # tr.fee_coin_symbol = CoinType.WICC.value
     # tr.asset_update_type = AssetUpdateType.OWNER_UID.value
     # tr.asset_update_value = "0-2"
@@ -46,7 +46,7 @@ if __name__ == '__main__':
     # tr = CdpStakeTransaction()
     # tr.valid_height = 5003
     # tr.fee_amount = 10000000
-    # tr.register_id = "0-1"
+    # tr.regid = "0-1"
     # tr.fee_coin_symbol = CoinType.WUSD.value
     # tr.stake_list = [CdpStakeAsset(CoinType.WICC.value, 100000000)]
     # tr.cdp_id = "009c0e665acdd9e8ae754f9a51337b85bb8996980a93d6175b61edccd3cdc144"
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     #
     # tr = CdpRedeemTransaction()
     # tr.valid_height = 8510
-    # tr.register_id = "0-1"
+    # tr.regid = "0-1"
     # tr.fee_amount = 10000000
     # tr.fee_coin_symbol = CoinType.WICC.value
     # tr.redeem_list = [CdpRedeemAsset(CoinType.WICC.value, 100000000)]
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     #
     # tr = CdpLiquidateTransaction()
     # tr.valid_height = 283308
-    # tr.register_id = "0-1"
+    # tr.regid = "0-1"
     # tr.fee_amount = 10000000
     # tr.fee_coin_symbol = CoinType.WICC.value
     # tr.cdp_id = "009c0e665acdd9e8ae754f9a51337b85bb8996980a93d6175b61edccd3cdc144"
@@ -90,7 +90,7 @@ if __name__ == '__main__':
     tr.fee_amount = 10000000
     tr.fee_coin_symbol = CoinType.WICC.value
     tr.valid_height = 283308
-    tr.register_id = "0-1"
+    tr.regid = "0-1"
     tr.coin_symbol = CoinType.WUSD.value
     tr.asset_symbol = CoinType.WICC.value
     tr.asset_amount = 100 * 100000000
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     tr.fee_amount = 10000000
     tr.fee_coin_symbol = CoinType.WICC.value
     tr.valid_height = 283308
-    tr.register_id = "0-1"
+    tr.regid = "0-1"
     tr.coin_symbol = CoinType.WUSD.value
     tr.asset_symbol = CoinType.WICC.value
     tr.asset_amount = 100 * 100000000
@@ -118,7 +118,7 @@ if __name__ == '__main__':
     # tr.fee_amount = 10000000
     # tr.fee_coin_symbol = CoinType.WICC.value
     # tr.valid_height = 283308
-    # tr.register_id = "0-1"
+    # tr.regid = "0-1"
     # tr.coin_symbol = CoinType.WUSD.value
     # tr.coin_amount = 100 * 100000000
     # tr.asset_symbol = CoinType.WICC.value
@@ -131,7 +131,7 @@ if __name__ == '__main__':
     # tr.fee_amount = 10000000
     # tr.fee_coin_symbol = CoinType.WICC.value
     # tr.valid_height = 283308
-    # tr.register_id = "0-1"
+    # tr.regid = "0-1"
     # tr.coin_symbol = CoinType.WUSD.value
     # tr.asset_symbol = CoinType.WICC.value
     # tr.asset_amount = 100 * 100000000
@@ -144,7 +144,7 @@ if __name__ == '__main__':
     tr.fee_amount = 1000000
     tr.fee_coin_symbol = CoinType.WICC.value
     tr.valid_height = 283308
-    tr.register_id = "0-1"
+    tr.regid = "0-1"
     tr.order_id = "009c0e665acdd9e8ae754f9a51337b85bb8996980a93d6175b61edccd3cdc144"
     rawtx = wallet.dex_cancel_order_tx(tr)
     print(rawtx)
@@ -153,13 +153,13 @@ if __name__ == '__main__':
     w = Wallet("Y5NyUyMeRkVX18WUB7ybwjuN8wruTi7HJpdPbFKnRBqKPQ215SpV")
     tr = TransferTransaction()
     tr.valid_height = BaasManager.get_valid_height()
-    tr.register_id = "265866-2"
+    tr.regid = "265866-2"
     tr.fee_amount = 10000000
     tr.fee_coin_symbol = "WICC"
     tr.memo = "转账"
     tr.transfer_list = [
-        Transfer(amount=10000000000, symbol="WICC", desert_address="wahso3aWQFtFpmaTmFF8FFYbiM88xE4R4h"),
-        Transfer(amount=10000000000, symbol="WICC", desert_address="wMS4ZG4xfoTY9MXpbykTPvFPzFViPa6aGf"),
+        Transfer(amount=10000000000, symbol="WICC", to_addr="wahso3aWQFtFpmaTmFF8FFYbiM88xE4R4h"),
+        Transfer(amount=10000000000, symbol="WICC", to_addr="wMS4ZG4xfoTY9MXpbykTPvFPzFViPa6aGf"),
     ]
     rawtx = w.transfer_tx(tr)
     print(BaasManager.submit_tx(rawtx))
@@ -168,7 +168,7 @@ if __name__ == '__main__':
     w = Wallet("Y6J4aK6Wcs4A3Ex4HXdfjJ6ZsHpNZfjaS4B9w7xqEnmFEYMqQd13")
     contract_call = ContractCallTransaction()
     contract_call.valid_height = BaasManager.get_valid_height()
-    contract_call.register_id = "0-1"
+    contract_call.regid = "0-1"
     contract_call.fee_amount = 100000
     contract_call.fee_coin_symbol = CoinType.WICC.value
     contract_call.app_id = "450687-1"
@@ -181,7 +181,7 @@ if __name__ == '__main__':
     # 投票交易
     vote = VoteTransaction()
     vote.valid_height = BaasManager.get_valid_height()
-    vote.register_id = "25813-1"
+    vote.regid = "25813-1"
     vote.fee_amount = 10000000
     vote.fee_coin_symbol = CoinType.WICC.value
     vote.vote_list = [

@@ -94,11 +94,11 @@ class Serializer(object):
         self.out.append(index)
         return self
 
-    def ser_desert_address(self, desert_address):
+    def ser_to_addr(self, to_addr):
         """
-            :param desert_address: 接受地址
+            :param to_addr: 接受地址
             """
-        address_bin = b58check_to_bin(desert_address)
+        address_bin = b58check_to_bin(to_addr)
         self.out.append(number_to_var_int(len(address_bin)))
         self.out.append(address_bin)
         return self
@@ -179,7 +179,7 @@ class Serializer(object):
         """
         self.out.append(number_to_var_int(len(transfer_list)))
         for tf in transfer_list:
-            address_bin = b58check_to_bin(tf.desert_address)
+            address_bin = b58check_to_bin(tf.to_addr)
             self.out.append(number_to_var_int(len(address_bin)))
             self.out.append(address_bin)
 
@@ -241,4 +241,3 @@ class Stamper(object):
         :return: 签名
         """
         return der_encode_sig(*ecdsa_raw_sign(message, private_key))
-

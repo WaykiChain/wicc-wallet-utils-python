@@ -37,7 +37,7 @@ class Wallet(object):
             .ser_version(self.version)\
             .ser_tx_type(TxType.U_COIN_TRANSFER.value)\
             .ser_valid_height(transfer.valid_height)\
-            .ser_regid_or_public_key(transfer.register_id, self.public_key)\
+            .ser_regid_or_public_key(transfer.regid, self.public_key)\
             .ser_fee(int(transfer.fee_amount), transfer.fee_coin_symbol)\
             .ser_transfer(transfer.transfer_list)\
             .ser_memo(transfer.memo)\
@@ -49,7 +49,7 @@ class Wallet(object):
             .ser_tx_type(TxType.U_COIN_TRANSFER.value)\
             .ser_version(self.version)\
             .ser_valid_height(transfer.valid_height)\
-            .ser_regid_or_public_key(transfer.register_id, self.public_key) \
+            .ser_regid_or_public_key(transfer.regid, self.public_key) \
             .ser_fee(int(transfer.fee_amount), transfer.fee_coin_symbol)\
             .ser_transfer(transfer.transfer_list)\
             .ser_memo(transfer.memo)\
@@ -78,7 +78,7 @@ class Wallet(object):
             .ser_version(self.version) \
             .ser_tx_type(TxType.U_CONTRACT_INVOKE.value) \
             .ser_valid_height(contract_call.valid_height) \
-            .ser_regid_or_public_key(contract_call.register_id, self.public_key) \
+            .ser_regid_or_public_key(contract_call.regid, self.public_key) \
             .ser_regid(contract_call.app_id)\
             .ser_contract_message(contract_call.contract_call_msg)\
             .ser_fee_amount(int(contract_call.fee_amount))\
@@ -92,7 +92,7 @@ class Wallet(object):
             .ser_tx_type(TxType.U_CONTRACT_INVOKE.value) \
             .ser_version(self.version) \
             .ser_valid_height(contract_call.valid_height) \
-            .ser_regid_or_public_key(contract_call.register_id, self.public_key) \
+            .ser_regid_or_public_key(contract_call.regid, self.public_key) \
             .ser_regid(contract_call.app_id)\
             .ser_contract_message(contract_call.contract_call_msg)\
             .ser_fee_amount(int(contract_call.fee_amount)) \
@@ -110,7 +110,7 @@ class Wallet(object):
             .ser_version(self.version)\
             .ser_tx_type(TxType.DEX_LIMITED_PRICE_BUY_ORDER.value)\
             .ser_valid_height(t.valid_height)\
-            .ser_regid_or_public_key(t.register_id, self.public_key)\
+            .ser_regid_or_public_key(t.regid, self.public_key)\
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol)\
             .ser_coin_symbol(t.coin_symbol)\
             .ser_coin_symbol(t.asset_symbol)\
@@ -124,7 +124,7 @@ class Wallet(object):
             .ser_tx_type(TxType.DEX_LIMITED_PRICE_BUY_ORDER.value) \
             .ser_version(self.version) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_coin_symbol(t.coin_symbol) \
             .ser_coin_symbol(t.asset_symbol) \
@@ -142,7 +142,7 @@ class Wallet(object):
             .ser_version(self.version) \
             .ser_tx_type(TxType.DEX_LIMITED_PRICE_SELL_ORDER.value) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_coin_symbol(t.coin_symbol) \
             .ser_coin_symbol(t.asset_symbol) \
@@ -156,7 +156,7 @@ class Wallet(object):
             .ser_tx_type(TxType.DEX_LIMITED_PRICE_SELL_ORDER.value) \
             .ser_version(self.version) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_coin_symbol(t.coin_symbol) \
             .ser_coin_symbol(t.asset_symbol) \
@@ -174,7 +174,7 @@ class Wallet(object):
             .ser_version(self.version) \
             .ser_tx_type(TxType.DEX_MARKET_PRICE_BUY_ORDER.value) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_coin_symbol(t.coin_symbol) \
             .ser_coin_symbol(t.asset_symbol) \
@@ -187,7 +187,7 @@ class Wallet(object):
             .ser_tx_type(TxType.DEX_MARKET_PRICE_BUY_ORDER.value) \
             .ser_version(self.version) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(t.fee_amount, t.fee_coin_symbol) \
             .ser_coin_symbol(t.coin_symbol) \
             .ser_coin_symbol(t.asset_symbol) \
@@ -204,7 +204,7 @@ class Wallet(object):
             .ser_version(self.version) \
             .ser_tx_type(TxType.DEX_MARKET_PRICE_SELL_ORDER.value) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_coin_symbol(t.coin_symbol) \
             .ser_coin_symbol(t.asset_symbol) \
@@ -217,7 +217,7 @@ class Wallet(object):
             .ser_tx_type(TxType.DEX_MARKET_PRICE_SELL_ORDER.value) \
             .ser_version(self.version) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_coin_symbol(t.coin_symbol) \
             .ser_coin_symbol(t.asset_symbol) \
@@ -234,7 +234,7 @@ class Wallet(object):
             .ser_version(self.version) \
             .ser_tx_type(TxType.DEX_CANCEL_ORDER.value) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_order_id(t.order_id)\
             .to_message()
@@ -245,7 +245,7 @@ class Wallet(object):
             .ser_tx_type(TxType.DEX_CANCEL_ORDER.value) \
             .ser_version(self.version) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_order_id(t.order_id) \
             .ser_signature(signature) \
@@ -260,7 +260,7 @@ class Wallet(object):
             .ser_version(self.version) \
             .ser_tx_type(TxType.CDP_STAKE.value) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_cdp_id(t.cdp_id)\
             .ser_cdp_stake_list(t.stake_list)\
@@ -274,7 +274,7 @@ class Wallet(object):
             .ser_tx_type(TxType.CDP_STAKE.value)\
             .ser_version(self.version)\
             .ser_valid_height(t.valid_height)\
-            .ser_regid_or_public_key(t.register_id, self.public_key)\
+            .ser_regid_or_public_key(t.regid, self.public_key)\
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_cdp_id(t.cdp_id) \
             .ser_cdp_stake_list(t.stake_list)\
@@ -292,7 +292,7 @@ class Wallet(object):
             .ser_version(self.version) \
             .ser_tx_type(TxType.CDP_REDEEM.value) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_cdp_id(t.cdp_id) \
             .ser_coin_amount(int(t.repay_amount)) \
@@ -305,7 +305,7 @@ class Wallet(object):
             .ser_tx_type(TxType.CDP_REDEEM.value) \
             .ser_version(self.version) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_cdp_id(t.cdp_id) \
             .ser_coin_amount(int(t.repay_amount)) \
@@ -322,7 +322,7 @@ class Wallet(object):
             .ser_version(self.version) \
             .ser_tx_type(TxType.CDP_LIQUIDATE.value) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_cdp_id(t.cdp_id) \
             .ser_coin_symbol(t.liquidate_coin_symbol) \
@@ -335,7 +335,7 @@ class Wallet(object):
             .ser_tx_type(TxType.CDP_LIQUIDATE.value) \
             .ser_version(self.version) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid_or_public_key(t.register_id, self.public_key) \
+            .ser_regid_or_public_key(t.regid, self.public_key) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_cdp_id(t.cdp_id) \
             .ser_coin_symbol(t.liquidate_coin_symbol) \
@@ -355,7 +355,7 @@ class Wallet(object):
             .ser_version(self.version) \
             .ser_tx_type(TxType.ASSET_UPDATE.value) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid(t.register_id) \
+            .ser_regid(t.regid) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_coin_symbol(t.asset_symbol) \
             .ser_asset_type_and_value(t.asset_update_type, t.asset_update_value)\
@@ -367,7 +367,7 @@ class Wallet(object):
             .ser_tx_type(TxType.ASSET_UPDATE.value) \
             .ser_version(self.version) \
             .ser_valid_height(t.valid_height) \
-            .ser_regid(t.register_id) \
+            .ser_regid(t.regid) \
             .ser_fee(int(t.fee_amount), t.fee_coin_symbol) \
             .ser_coin_symbol(t.asset_symbol) \
             .ser_asset_type_and_value(t.asset_update_type, t.asset_update_value) \

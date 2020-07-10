@@ -50,33 +50,33 @@ class AssetUpdateType(Enum):
 
 
 class CoinType(Enum):
-    WICC ="WICC"
+    WICC = "WICC"
     WUSD = "WUSD"
     WGRT = "WICC"
     WCNY = "WCNY"
     WBTC = "WBTC"
     WETH = "WETH"
     WEOS = "WEOS"
-    USD = "USD"
-    CNY = "CNY"
-    EUR = "EUR"
-    BTC = "BTC"
+    USD  = "USD"
+    CNY  = "CNY"
+    EUR  = "EUR"
+    BTC  = "BTC"
     USDT = "USDT"
     GOLD = "GOLD"
-    KWH = "KWH"
+    KWH  = "KWH"
 
 
 class Transfer(object):
 
-    def __init__(self, amount, symbol, desert_address):
+    def __init__(self, amount, symbol, to_addr):
         """
         :param amount: 支付的数量
         :param symbol: 支付的币种
-        :param desert_address: 支付到的地址
+        :param to_addr: 支付到的地址
         """
         self.pay_amount = amount
         self.pay_coin_symbol = symbol
-        self.desert_address = desert_address
+        self.to_addr = to_addr
 
 
 class Vote(object):
@@ -98,7 +98,8 @@ class BaseTransaction(object):
     """
     def __init__(self):
         self.valid_height = 0
-        self.register_id = ""
+        self.pubkey = ""
+        self.regid = ""
         self.fee_amount = 0
         self.fee_coin_symbol = ""
         self.memo = ""
@@ -277,8 +278,3 @@ class AssetPublishTransaction(BaseTransaction):
         self.asset_symbol = ""
         self.asset_update_type = 0
         self.asset_update_value = ""
-
-
-
-
-
