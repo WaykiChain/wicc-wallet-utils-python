@@ -5,8 +5,11 @@ Written in Python
 
 ## Install via Pip
 ```
-pip install wicc==0.0.16
+pip install wicc-wallet-utils==0.0.1
 ```
 
 ## Usage Reference
-https://pypi.org/project/wicc/0.0.16/
+https://pypi.org/project/wicc-wallet-utils/0.0.1/
+
+## Project Packaging Guide
+https://packaging.python.org/tutorials/packaging-projects/
