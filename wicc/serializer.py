@@ -77,7 +77,7 @@ class Serializer(object):
             self.out.append(height)
             self.out.append(index)
         else:
-            public_key_bytes = from_string_to_bytes(public_key)
+            public_key_bytes = safe_from_hex(public_key)
             self.out.append(number_to_var_int(len(public_key_bytes)))
             self.out.append(public_key_bytes)
         return self
