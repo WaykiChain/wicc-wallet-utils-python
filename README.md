@@ -13,3 +13,16 @@ https://pypi.org/project/wicc_wallet_utils/1.0.1/
 
 ## Project Packaging Guide
 https://packaging.python.org/tutorials/packaging-projects/
+
+## pipy upload procedures
+1. generate/update dist files
+
+```
+python3 setup.py sdist bdist_wheel
+```
+
+2. upload dist to pypi repo
+
+```
+python3 -m twine upload dist/*
+```
