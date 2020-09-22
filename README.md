@@ -5,11 +5,11 @@ Written in Python
 
 ## Install via Pip
 ```
-pip3 install wicc_wallet_utils==1.0.2
+pip3 install wicc_wallet_utils==1.0.1
 ```
 
 ## Usage Reference
-https://pypi.org/project/wicc_wallet_utils/1.0.2/
+https://pypi.org/project/wicc_wallet_utils/1.0.1/
 
 ## Project Packaging Guide
 https://packaging.python.org/tutorials/packaging-projects/
